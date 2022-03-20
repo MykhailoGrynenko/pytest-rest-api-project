@@ -7,7 +7,6 @@ pipeline {
                 echo 'Building..'
                 sh 'python3 -m venv my_venv'
                 sh 'source my_venv/bin/activate'
-                sh 'pip install --upgrade pip'
                 sh 'pip install -r requirements.txt'
                 sh 'pytest -sv'
                 sh 'deactivate'
