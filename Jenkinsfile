@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                ls
                 echo 'Building..'
                 sh 'python3 --version'
                 sh 'python3 -m venv my_venv'
