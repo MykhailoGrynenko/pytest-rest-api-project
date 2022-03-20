@@ -10,7 +10,7 @@ pipeline {
                 source my_venv/bin/activate
                 pip install --upgrade pip
                 pip install -r requirements.txt
-                pytest --alluredir=reports
+                pytest -sv
                 deactivate
             }
         }
