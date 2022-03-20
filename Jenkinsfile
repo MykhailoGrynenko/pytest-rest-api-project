@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 sh 'python3 --version'
-                virtualenv my_venv
+                sh 'python3 virtualenv my_venv'
                 source my_venv/bin/activate
                 sh 'python3 pip install --upgrade pip'
                 sh 'python3 pip install -r requirements.txt'
