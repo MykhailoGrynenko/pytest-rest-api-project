@@ -11,6 +11,7 @@ pipeline {
                 pip install --upgrade pip
                 pip install -r requirements.txt
                 pytest --alluredir=reports
+                allure serve /tmp/my_allure_results
                 deactivate
                 """
             }
