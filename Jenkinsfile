@@ -9,8 +9,8 @@ pipeline {
                 virtualenv my_venv
                 source my_venv/bin/activate
                 sh 'python3 pip install --upgrade pip'
-                pip install -r requirements.txt
-                pytest -sv
+                sh 'python3 pip install -r requirements.txt'
+                sh 'python3 pytest -sv'
             }
         }
         stage('Test') {
