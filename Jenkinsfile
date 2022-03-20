@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                python3
+                sh 'php --version'
                 print('hello')
             }
         }
