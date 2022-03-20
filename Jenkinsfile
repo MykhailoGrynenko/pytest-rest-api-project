@@ -4,14 +4,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'ls'
                 echo 'Building..'
-                sh 'python3 --version'
                 sh 'python3 -m venv my_venv'
-                source my_venv/bin/activate
-                sh 'python3 pip install --upgrade pip'
-                sh 'python3 pip install -r requirements.txt'
-                sh 'python3 pytest -sv'
+                sh 'source my_venv/bin/activate'
+                sh 'pip install --upgrade pip'
+                sh 'pip install -r requirements.txt'
+                sh 'pytest -sv'
+                sh 'deactivate'
             }
         }
         stage('Test') {
