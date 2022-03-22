@@ -15,7 +15,7 @@ pipeline {
                 """
             }
 
-        stage('reports') {
+        stage('Test') {
             steps {
             script {
                     allure([
@@ -26,11 +26,6 @@ pipeline {
                             results: [[path: 'reports']]
                     ])
             }
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
             }
         }
         stage('Deploy') {
