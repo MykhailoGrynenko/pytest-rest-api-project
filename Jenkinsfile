@@ -24,7 +24,7 @@ pipeline {
                             reportBuildPolicy: 'ALWAYS',
                             results: [[path: 'reports']]
                     ])
-            }
+
             }
         }
         stage('Deploy') {
