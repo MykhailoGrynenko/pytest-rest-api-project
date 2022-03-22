@@ -14,7 +14,6 @@ pipeline {
                 deactivate
                 """
             }
-
         stage('Test') {
             steps {
             script {
