@@ -17,7 +17,15 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+            script {
+                    allure([
+                            includeProperties: false,
+                            jdk: '',
+                            properties: [],
+                            reportBuildPolicy: 'ALWAYS',
+                            results: [[path: 'reports']]
+                    ])
+            }
             }
         }
         stage('Deploy') {
