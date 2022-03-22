@@ -14,17 +14,10 @@ pipeline {
                 deactivate
                 """
             }
+        }
         stage('Test') {
             steps {
-            script {
-                    allure([
-                            includeProperties: false,
-                            jdk: '',
-                            properties: [],
-                            reportBuildPolicy: 'ALWAYS',
-                            results: [[path: 'reports']]
-                    ])
-            }
+                echo 'Testing..'
             }
         }
         stage('Deploy') {
@@ -33,4 +26,4 @@ pipeline {
             }
         }
     }
-}}
+}
